@@ -1,0 +1,20 @@
+version: "3"
+services:
+  react-app:
+    image: react-app
+    restart: always
+    stdin_open: true
+    ports: 
+      - "3000:3000"
+  api-server:
+    image: api-server
+    restart: always
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:3.6.19-xenial
+    restart: always
+    ports:
+      - "27017:27017"
