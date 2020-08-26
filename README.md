@@ -6,9 +6,9 @@ I then containerized the api server and react client and created docker-compose 
 
 ---
 
-Run `make run` from root to build and run containers.
+Run `make build` from root to build containers
+Run `make run` from root to run containers with docker-compose
 
 ---
 
-TODO: 
-- Add volume to persist DB data
+**NOTE:** This is a development configuration where the react app is being served by a separate container. We would also want to create a production version where we build a static version of the react site and bundle it with the express server.
